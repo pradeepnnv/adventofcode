@@ -11,7 +11,11 @@ import (
 )
 
 func main() {
-	f, err := os.Open("day1input.txt")
+	fmt.Println(os.Args)
+	if len(os.Args) != 2 {
+		return
+	}
+	f, err := os.Open(os.Args[1])
 	if err != nil {
 		log.Fatalf("error while reading input %s", err)
 	}
@@ -23,5 +27,6 @@ func main() {
 		input = append(input, s.Text())
 	}
 
-	fmt.Println(day1.CaliberationValuePart1(input))
+	fmt.Printf("Part1 output is %d\n", day1.CaliberationValuePart1(input))
+	fmt.Printf("Part2 output is %d\n", day1.CaliberationValuePart2(input))
 }
