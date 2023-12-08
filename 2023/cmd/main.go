@@ -7,7 +7,7 @@ import (
 
 	"log"
 
-	"github.com/pradeepnnv/adventofcode/2023/day1"
+	"github.com/pradeepnnv/adventofcode/2023/day2"
 )
 
 func main() {
@@ -27,6 +27,9 @@ func main() {
 		input = append(input, s.Text())
 	}
 
-	fmt.Printf("Part1 output is %d\n", day1.CaliberationValuePart1(input))
-	fmt.Printf("Part2 output is %d\n", day1.CaliberationValuePart2(input))
+	// fmt.Printf("Part1 output is %d\n", day1.CaliberationValuePart1(input))
+	// fmt.Printf("Part2 output is %d\n", day1.CaliberationValuePart2(input))
+	fmt.Printf("Part1 output is %d\n", day2.GameProcessorDay1(input))
+	// fmt.Printf("Part2 output is %d\n", day1.CaliberationValuePart2(input))
+
 }
