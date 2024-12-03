@@ -9,7 +9,11 @@ import (
 	"strings"
 )
 
-func SolvePart1() int {
+func Solve() {
+	log.Printf("Total Difference is %d", solvePart1())
+	log.Printf("Total Similarity score is %d", solvePart2())
+}
+func solvePart1() int {
 	list1, list2 := readInput("inputs/day1.txt")
 
 	var diff int
@@ -26,7 +30,7 @@ func SolvePart1() int {
 	return diff
 }
 
-func SolvePart2() (score int) {
+func solvePart2() (score int) {
 
 	list1, list2 := readInput("inputs/day1.txt")
 	//log.Println(list1, list2)
