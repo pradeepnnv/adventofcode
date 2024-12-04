@@ -10,8 +10,39 @@ import (
 
 func Solve() {
 	log.Printf("Count of safe reports are %d\n", solvePart1())
+	log.Printf("Count of safe reports after using problem dampener are %d\n", solvePart2())
+}
+func solvePart2() (safeCount int) {
+	list := readInput("inputs/day2.txt")
+	for _, l := range list {
+		//log.Printf("List %v is %t", l, isReportSafe(l))
+		if isReportSafeWithDampener(l) {
+			//log.Printf("%v series is safe", l)
+			safeCount++
+		}
+	}
+	return
 }
 
+func isReportSafeWithDampener(list []int) (isSafe bool) {
+	if !isReportSafe(list) {
+		//log.Printf("Not safe report for %v. Trying with problem dampener", list)
+		for i := 0; i < len(list); i++ {
+			//l := append(list[:i], list[i+1:]...)
+			l := make([]int, 0)
+			l = append(l, list[:i]...)
+			l = append(l, list[i+1:]...)
+			//log.Printf("Trying %v... report is %t", l, isReportSafe(l))
+			if isReportSafe(l) {
+				return true
+			}
+		}
+	} else {
+		return true
+	}
+
+	return
+}
 func solvePart1() (safeCount int) {
 	list := readInput("inputs/day2.txt")
 	for _, l := range list {
