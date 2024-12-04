@@ -13,7 +13,7 @@ func Solve() {
 	log.Printf("Count of safe reports after using problem dampener are %d\n", solvePart2())
 }
 func solvePart2() (safeCount int) {
-	list := readInput("2024/inputs/day2.txt")
+	list := readInput("inputs/day2.txt")
 	for _, l := range list {
 		//log.Printf("List %v is %t", l, isReportSafe(l))
 		if isReportSafeWithDampener(l) {
@@ -44,7 +44,7 @@ func isReportSafeWithDampener(list []int) (isSafe bool) {
 	return
 }
 func solvePart1() (safeCount int) {
-	list := readInput("2024/inputs/day2.txt")
+	list := readInput("inputs/day2.txt")
 	for _, l := range list {
 		//log.Printf("List %v is %t", l, isReportSafe(l))
 		if isReportSafe(l) {
